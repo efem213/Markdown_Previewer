@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="quotes.js"></script>
+        <script src="./JS/marked.js"></script>
+    <script>
+        
+        function updatePreview() {
+                let previewValue = document.getElementById("preview");
+                let editorValue =  document.getElementById("editor");
+                previewValue.innerHTML = marked(editorValue.value) 
+                }
+                window.onload = setDefault();
+        function setDefault() {
+            let defaultText = `\
+# Learn to Code in a Year Challange
+## I challange myself to lear how to code in a Year  
+[Learn more about my Progress] (https://twitter.com/SoftwareLoading)
+<dl>
+    <dt>Which platform I am using to learn?</dt>
+    <dd>-FreeCodeCamp is still the best platform that I prefer to learn from</dd>
+
+    <dt>Which editor I am using?</dt>
+    <dd>- I use Microsoft visiual studio because I like interface</dd>
+</dl>
+
+\`This is an example of inline code\`
+
+\`\`\`
+function exampleOf() {
+    return multiLineCodeBlock;
+}
+\`\`\`
+
+- This
+- is
+- an
+- example
+- of
+- list
+- items
+
+
+> This is an example of block quote
+
+![Software Engineer Loading](https://i.ibb.co/ynVRw6N/soft.jpg)
+
+**This is an example of Bolded Text**`;
+       
+        let editorField = document.getElementById("editor")
+        let previewValue = document.getElementById("preview");
+        editorField.value = defaultText
+        previewValue.innerHTML = marked(defaultText);
+    }
+    </script>
+    <title>Markdown Previewer by EFE</title>    
+    </head>
+    <body onload="setDefault()">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center text-white bg-success">
+                <h1>Markdown Previewer by EFE</h1>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex flex-column">
+                    <h2 class="text-center my-3">Editor</h2>
+                    <div class="form-group flex-grow-1 d-flex flex-column">
+                        <textarea 
+                            id="editor" 
+                            onkeyup="updatePreview()"
+                            class="form-control flex-grow-1"              >
+                        </textarea>
+                    </div>
+
+
+
+                </div>
+                <div class="col-6">
+                        <h2 class="text-center my-3">Preview</h2>
+                        <div id="preview"></div>
+                
+
+
+                </div>
+            </div>
+        
+    </div>
+        <script src= "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+
+
+
+    </body>
+</html>
+
